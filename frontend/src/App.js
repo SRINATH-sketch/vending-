@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const translations = {
@@ -203,9 +203,7 @@ function App() {
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [activePaymentMode, setActivePaymentMode] = useState(null);
   const [theme, setTheme] = useState('dark');
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [rippleOrigin, setRippleOrigin] = useState({ x: '50%', y: '50%' });
-  const themeToggleRef = useRef(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [itemWeights, setItemWeights] = useState({});
   const [inventory] = useState([
     { id: 1, total: 500, current: 345 },
@@ -236,24 +234,7 @@ function App() {
     return () => clearInterval(interval);
   }, [currentScreen, bagTimer, isBagPlaced]);
 
-  const toggleTheme = (e) => {
-    if (isTransitioning) return;
-    // Calculate ripple origin from the button's position
-    if (e && e.currentTarget) {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = ((rect.left + rect.width / 2) / window.innerWidth) * 100;
-      const y = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
-      setRippleOrigin({ x: `${x}%`, y: `${y}%` });
-    }
-    setIsTransitioning(true);
-    // Switch theme at the midpoint of the animation
-    setTimeout(() => {
-      setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-    }, 300);
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 700);
-  };
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   const t = translations[lang];
   const calculateTotal = () => {
@@ -328,21 +309,46 @@ function App() {
 
   return (
     <div className={`App theme-${theme}`}>
-      {isTransitioning && (
-        <div
-          className={`theme-ripple-overlay ${theme === 'dark' ? 'to-light' : 'to-dark'}`}
-          style={{ '--ripple-x': rippleOrigin.x, '--ripple-y': rippleOrigin.y }}
-        />
-      )}
       <header className="App-header">
         <div className="capacity-toggle">
           <button
-            onClick={() => setCurrentScreen(currentScreen === 'capacity' ? 'home' : 'capacity')}
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             title={t.capacityTitle}
-            className={currentScreen === 'capacity' ? 'active' : ''}
+            className={isSidebarOpen ? 'active' : ''}
           >
             📊
           </button>
+        </div>
+
+        <div className={`capacity-sidebar ${isSidebarOpen ? 'open' : ''}`}>
+          <div className="sidebar-header">
+            <h2>{t.capacityTitle}</h2>
+            <button className="close-sidebar-btn" onClick={() => setIsSidebarOpen(false)}>×</button>
+          </div>
+          <div className="sidebar-content">
+            <div className="inventory-list">
+              {inventory.map(itemInv => {
+                const item = t.items.find(i => i.id === itemInv.id);
+                const percentage = (itemInv.current / itemInv.total) * 100;
+                return (
+                  <div key={itemInv.id} className="inventory-item">
+                    <div className="inventory-header">
+                      <span className="inventory-name">{item?.name}</span>
+                      <span className="inventory-values">
+                        {itemInv.current} / {itemInv.total} {t.unitKg}
+                      </span>
+                    </div>
+                    <div className="progress-container">
+                      <div
+                        className={`progress-bar ${percentage < 20 ? 'critical' : percentage < 50 ? 'low' : ''}`}
+                        style={{ width: `${percentage}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         <div className="language-selector">
@@ -351,8 +357,8 @@ function App() {
           <button className={lang === 'hi' ? 'active' : ''} onClick={() => setLang('hi')}>हिन्दी</button>
         </div>
 
-        <div className="theme-toggle" ref={themeToggleRef}>
-          <button onClick={toggleTheme} title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"} className={isTransitioning ? 'spinning' : ''}>
+        <div className="theme-toggle">
+          <button onClick={toggleTheme} title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}>
             {theme === 'dark' ? '☀️' : '🌙'}
           </button>
         </div>
@@ -366,7 +372,7 @@ function App() {
           {currentScreen === 'home' && (
             <>
               {inventory.some(item => (item.current / item.total) < 0.15) && (
-                <div className="low-stock-alert" onClick={() => setCurrentScreen('capacity')}>
+                <div className="low-stock-alert" onClick={() => setIsSidebarOpen(true)}>
                   <span className="warning-icon">⚠️</span>
                   <div className="warning-content">
                     <strong>{t.lowStockWarning}</strong>
@@ -387,36 +393,7 @@ function App() {
             </>
           )}
 
-          {currentScreen === 'capacity' && (
-            <div className="screen-content capacity-screen">
-              <h2>{t.capacityTitle}</h2>
-              <div className="inventory-list">
-                {inventory.map(itemInv => {
-                  const item = t.items.find(i => i.id === itemInv.id);
-                  const percentage = (itemInv.current / itemInv.total) * 100;
-                  return (
-                    <div key={itemInv.id} className="inventory-item">
-                      <div className="inventory-header">
-                        <span className="inventory-name">{item?.name}</span>
-                        <span className="inventory-values">
-                          {itemInv.current} / {itemInv.total} {t.unitKg}
-                        </span>
-                      </div>
-                      <div className="progress-container">
-                        <div
-                          className={`progress-bar ${percentage < 20 ? 'critical' : percentage < 50 ? 'low' : ''}`}
-                          style={{ width: `${percentage}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="machine-panel">
-                <button className="action-btn back-btn" onClick={() => setCurrentScreen('home')}>{t.back}</button>
-              </div>
-            </div>
-          )}
+
 
           {currentScreen === 'qr' && (
             <div className="screen-content">
