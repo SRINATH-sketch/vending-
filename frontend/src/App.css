@@ -13,6 +13,7 @@
   --card-border: rgba(255, 255, 255, 0.1);
   --input-bg: rgba(255, 255, 255, 0.1);
   --header-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-bg: #22222a;
 }
 
 .App.theme-light {
@@ -30,6 +31,7 @@
   --card-border: rgba(0, 0, 0, 0.05);
   --input-bg: rgba(0, 0, 0, 0.05);
   --header-bg: rgba(0, 0, 0, 0.05);
+  --sidebar-bg: #f5f7fa;
 }
 
 body {
@@ -690,7 +692,7 @@ h1 {
   width: 400px;
   max-width: 90vw;
   height: 100vh;
-  background: var(--panel-bg);
+  background: var(--sidebar-bg);
   border-right: 1px solid var(--panel-border);
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.4);
   z-index: 999;
