@@ -15,7 +15,7 @@ const translations = {
     placeBagBtn: "Simulate Bag Placement",
     nextItemBtn: "Next Item",
     thankYou: "THANK YOU",
-    welcome: "Welcome to our Vending Machine!",
+    welcome: "Welcome to our Smart Vending Machine!",
     select: "Please select your preferred language above.",
     startBtn: "Start",
     instructionQr: "Scan your Smart Card or QR Code.",
@@ -46,7 +46,9 @@ const translations = {
       { id: 2, name: "Raw Rice", min: 1, max: 10, price: 0 },
       { id: 3, name: "Dhal", min: 0.5, max: 3, price: 10 },
       { id: 4, name: "Sugar", min: 1, max: 5, price: 20 },
-      { id: 5, name: "Wheat", min: 1, max: 10, price: 5 }
+      { id: 5, name: "Wheat", min: 1, max: 10, price: 5 },
+      { id: 6, name: "Oil", min: 1, max: 5, price: 25 },
+      { id: 7, name: "Kerosene", min: 1, max: 10, price: 15 }
     ],
     addMore: "+ Add more",
     cardDetailsTitle: "Smart Card Details",
@@ -62,7 +64,14 @@ const translations = {
     lowStockWarning: "Warning: Low Stock Detected!",
     itemLowStock: "capacity is below 15%!",
     totalPaid: "Total Paid",
-    amountDue: "Amount Due"
+    amountDue: "Amount Due",
+    familyMembersTitle: "Family Members",
+    familyMembersList: [
+      { name: "Srinath G", age: 42, relation: "Self", gender: "Male" },
+      { name: "Priya S", age: 38, relation: "Spouse", gender: "Female" },
+      { name: "Arjun S", age: 16, relation: "Son", gender: "Male" },
+      { name: "Kavya S", age: 12, relation: "Daughter", gender: "Female" }
+    ]
   },
   ta: {
     title: "ஸ்மார்ட் பொது விநியோக அமைப்பு",
@@ -100,7 +109,7 @@ const translations = {
     dispensingTitle: "பொருட்கள் வழங்கப்படுகின்றன...",
     selectAnItem: "ஒரு பொருளைத் தேர்ந்தெடுக்கவும்",
     close: "மூடு",
-    back: "பின்செல்",
+    back: "முந்தையது",
     home: "மீண்டும் தொடங்கு",
     weightLabel: "எடையை உள்ளிடவும் (கிலோ):",
     items: [
@@ -108,7 +117,9 @@ const translations = {
       { id: 2, name: "பச்சரிசி", min: 1, max: 10, price: 0 },
       { id: 3, name: "பருப்பு", min: 0.5, max: 3, price: 10 },
       { id: 4, name: "சர்க்கரை", min: 1, max: 5, price: 20 },
-      { id: 5, name: "கோதுமை", min: 1, max: 10, price: 5 }
+      { id: 5, name: "கோதுமை", min: 1, max: 10, price: 5 },
+      { id: 6, name: "எண்ணெய்", min: 1, max: 5, price: 25 },
+      { id: 7, name: "மண்ணெண்ணெய்", min: 1, max: 10, price: 15 }
     ],
     addMore: "+ மேலும் சேர்க்க",
     cardDetailsTitle: "ஸ்மார்ட் கார்டு விவரங்கள்",
@@ -124,7 +135,14 @@ const translations = {
     lowStockWarning: "எச்சரிக்கை: குறைந்த இருப்பு!",
     itemLowStock: "இருப்பு 15% க்கும் குறைவாக உள்ளது!",
     totalPaid: "செலுத்தப்பட்ட மொத்த தொகை",
-    amountDue: "செலுத்த வேண்டிய தொகை"
+    amountDue: "செலுத்த வேண்டிய தொகை",
+    familyMembersTitle: "குடும்ப உறுப்பினர்கள்",
+    familyMembersList: [
+      { name: "ஸ்ரீநாத் ஜி", age: 42, relation: "தான்", gender: "ஆண்" },
+      { name: "பிரியா ஸ்", age: 38, relation: "மனைவி", gender: "பெண்" },
+      { name: "அர்ஜுன் ஸ்", age: 16, relation: "மகன்", gender: "ஆண்" },
+      { name: "காவ்யா ஸ்", age: 12, relation: "மகள்", gender: "பெண்" }
+    ]
   },
   hi: {
     title: "स्मार्ट सार्वजनिक वितरण प्रणाली",
@@ -170,7 +188,9 @@ const translations = {
       { id: 2, name: "कच्चा चावल", min: 1, max: 10, price: 0 },
       { id: 3, name: "दाल", min: 0.5, max: 3, price: 10 },
       { id: 4, name: "चीनी", min: 1, max: 5, price: 20 },
-      { id: 5, name: "गेहूँ", min: 1, max: 10, price: 5 }
+      { id: 5, name: "गेहूँ", min: 1, max: 10, price: 5 },
+      { id: 6, name: "तेल", min: 1, max: 5, price: 25 },
+      { id: 7, name: "मिट्टी का तेल", min: 1, max: 10, price: 15 }
     ],
     addMore: "+ और जोड़ें",
     cardDetailsTitle: "स्मार्ट कार्ड विवरण",
@@ -186,7 +206,14 @@ const translations = {
     lowStockWarning: "चेतावनी: कम स्टॉक!",
     itemLowStock: "क्षमता 15% से कम है!",
     totalPaid: "कुल भुगतान किया गया",
-    amountDue: "देय राशि"
+    amountDue: "देय राशि",
+    familyMembersTitle: "परिवार के सदस्य",
+    familyMembersList: [
+      { name: "श्रीनाथ जी", age: 42, relation: "स्वयं", gender: "पुरुष" },
+      { name: "प्रिया एस", age: 38, relation: "पत्नी", gender: "महिला" },
+      { name: "अर्जुन एस", age: 16, relation: "पुत्र", gender: "पुरुष" },
+      { name: "काव्या एस", age: 12, relation: "पुत्री", gender: "महिला" }
+    ]
   }
 };
 
@@ -203,6 +230,7 @@ function App() {
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [activePaymentMode, setActivePaymentMode] = useState(null);
   const [theme, setTheme] = useState('dark');
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [itemWeights, setItemWeights] = useState({});
   const [inventory] = useState([
@@ -210,12 +238,15 @@ function App() {
     { id: 2, total: 500, current: 120 },
     { id: 3, total: 200, current: 180 },
     { id: 4, total: 200, current: 20 }, // Sugar is now 10% (below 15% threshold)
-    { id: 5, total: 300, current: 210 }
+    { id: 5, total: 300, current: 210 },
+    { id: 6, total: 100, current: 85 },
+    { id: 7, total: 150, current: 120 }
   ]);
 
   const [bagTimer, setBagTimer] = useState(120);
   const [isBagPlaced, setIsBagPlaced] = useState(false);
   const [activeTimeout, setActiveTimeout] = useState(null);
+  const [selectedMembers, setSelectedMembers] = useState([]);
 
   React.useEffect(() => {
     let interval;
@@ -234,7 +265,21 @@ function App() {
     return () => clearInterval(interval);
   }, [currentScreen, bagTimer, isBagPlaced]);
 
-  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  const toggleTheme = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+      setIsTransitioning(false);
+    }, 300);
+  };
+
+  const toggleMemberSelection = (memberName) => {
+    setSelectedMembers(prev =>
+      prev.includes(memberName)
+        ? prev.filter(name => name !== memberName)
+        : [...prev, memberName]
+    );
+  };
 
   const t = translations[lang];
   const calculateTotal = () => {
@@ -308,16 +353,17 @@ function App() {
   };
 
   return (
-    <div className={`App theme-${theme}`}>
+    <div className={`App theme-${theme}${isTransitioning ? ' theme-transitioning' : ''}`}>
+      {isTransitioning && <div className="theme-ripple-overlay" />}
       <header className="App-header">
-        <div className="capacity-toggle">
+        <div className="capacity-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
           <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             title={t.capacityTitle}
             className={isSidebarOpen ? 'active' : ''}
           >
             📊
           </button>
+          <span className="toggle-label">Inventory Status</span>
         </div>
 
         <div className={`capacity-sidebar ${isSidebarOpen ? 'open' : ''}`}>
@@ -352,45 +398,109 @@ function App() {
         </div>
 
         <div className="language-selector">
+          <span
+            className="lang-pill"
+            style={{ transform: `translateX(${['en', 'ta', 'hi'].indexOf(lang) * 100}%)` }}
+          />
           <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>English</button>
           <button className={lang === 'ta' ? 'active' : ''} onClick={() => setLang('ta')}>தமிழ்</button>
           <button className={lang === 'hi' ? 'active' : ''} onClick={() => setLang('hi')}>हिन्दी</button>
         </div>
 
         <div className="theme-toggle">
-          <button onClick={toggleTheme} title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+          <button
+            onClick={toggleTheme}
+            title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            className={isTransitioning ? 'spinning' : ''}
+          >
             {theme === 'dark' ? '☀️' : '🌙'}
           </button>
         </div>
 
-        <div className="machine-container">
+        <div className={`machine-container screen-${currentScreen}`}>
           <div className="header-titles">
             <h1>{t.title}</h1>
             <h3 className="subtitle">{t.subtitle}</h3>
           </div>
 
           {currentScreen === 'home' && (
-            <>
+            <div className="home-hero">
+              {/* Right-side Warnings Column */}
               {inventory.some(item => (item.current / item.total) < 0.15) && (
-                <div className="low-stock-alert" onClick={() => setIsSidebarOpen(true)}>
-                  <span className="warning-icon">⚠️</span>
-                  <div className="warning-content">
-                    <strong>{t.lowStockWarning}</strong>
-                    <div className="low-stock-items">
-                      {inventory
-                        .filter(item => (item.current / item.total) < 0.15)
-                        .map(item => t.items.find(i => i.id === item.id)?.name)
-                        .join(', ')} {t.itemLowStock}
-                    </div>
+                <div className="warnings-panel" onClick={() => setIsSidebarOpen(true)}>
+                  <div className="warnings-panel-header">
+                    <span>⚠️</span>
+                    <span>{t.lowStockWarning}</span>
                   </div>
+                  {inventory
+                    .filter(item => (item.current / item.total) < 0.15)
+                    .map(item => {
+                      const itemInfo = t.items.find(i => i.id === item.id);
+                      const pct = Math.round((item.current / item.total) * 100);
+                      return (
+                        <div key={item.id} className="warning-card">
+                          <div className="warning-card-top">
+                            <span className="warning-card-icon">🔴</span>
+                            <span className="warning-card-name">{itemInfo?.name}</span>
+                            <span className="warning-card-pct">{pct}%</span>
+                          </div>
+                          <div className="warning-progress-bar">
+                            <div className="warning-progress-fill" style={{ width: `${pct}%` }} />
+                          </div>
+                          <div className="warning-card-stock">
+                            {item.current} / {item.total} {t.unitKg} {t.itemLowStock}
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
               )}
-              <p className="welcome-text">{t.welcome}</p>
-              <p className="select-text">{t.select}</p>
-              <div className="machine-panel">
-                <button className="action-btn select-btn" onClick={() => setCurrentScreen('qr')}>{t.startBtn}</button>
+
+              {/* Hero Section */}
+              <div className="hero-section">
+                <div className="hero-icon-wrap">
+                  <div className="hero-machine-icon">🏪</div>
+                  <div className="hero-ping-ring" />
+                </div>
+                <div className="hero-badge">🟢 System Online &amp; Ready</div>
+                <h2 className="hero-welcome">{t.welcome}</h2>
+                <p className="hero-sub">{t.select}</p>
               </div>
-            </>
+
+              {/* Feature Cards */}
+              <div className="home-feature-grid">
+                <div className="home-feature-card">
+                  <div className="feature-icon">🪪</div>
+                  <div className="feature-title">Smart Card Auth</div>
+                  <div className="feature-desc">Scan your ration card or QR code for instant, secure identity verification.</div>
+                </div>
+                <div className="home-feature-card">
+                  <div className="feature-icon">⚡</div>
+                  <div className="feature-title">Quick Dispense</div>
+                  <div className="feature-desc">Select items, set quantities, and collect your ration in minutes — no queues.</div>
+                </div>
+                <div className="home-feature-card">
+                  <div className="feature-icon">🌐</div>
+                  <div className="feature-title">Multi-Language</div>
+                  <div className="feature-desc">Use the system in English, Tamil or Hindi — switch anytime from the top bar.</div>
+                </div>
+                <div className="home-feature-card">
+                  <div className="feature-icon">💳</div>
+                  <div className="feature-title">Secure Payments</div>
+                  <div className="feature-desc">Pay via UPI QR or cash for paid items. Free ration requires no payment.</div>
+                </div>
+              </div>
+
+
+
+              {/* CTA */}
+              <div className="home-cta">
+                <button className="action-btn select-btn home-start-btn" onClick={() => setCurrentScreen('qr')}>
+                  {t.startBtn} →
+                </button>
+                <p className="home-cta-note">Touch the button to begin your ration collection</p>
+              </div>
+            </div>
           )}
 
 
@@ -400,9 +510,53 @@ function App() {
               <h2>QR / Smart Card</h2>
               <p className="instruction-text">{t.instructionQr}</p>
 
-              <div className="qr-scanner-mock">
-                <div className="qr-frame">
-                  <div className="scan-line"></div>
+              <div className="qr-scan-layout">
+                {/* Left: Scanner */}
+                <div className="qr-scanner-mock">
+                  <div className="qr-scanner-wrapper">
+                    <div className="scanner-glow-ring" />
+
+                    <div className="qr-frame">
+                      <span className="corner tl" />
+                      <span className="corner tr" />
+                      <span className="corner bl" />
+                      <span className="corner br" />
+                      <div className="qr-grid-hint" />
+                      <div className="scan-line">
+                        <div className="scan-beam-glow" />
+                      </div>
+                    </div>
+
+                    <div className="scanner-status">
+                      <span className="scanner-dot" />
+                      <span className="scanner-status-text">Scanning…</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Instructions */}
+                <div className="scan-instructions-panel">
+                  <h3 className="scan-instr-title">
+                    How to Scan
+                  </h3>
+                  <ol className="scan-steps">
+                    <li className="scan-step">
+                      <span className="step-num">1</span>
+                      <span className="step-text">Place your QR code or Smart Card inside the scanning frame on the screen.</span>
+                    </li>
+                    <li className="scan-step">
+                      <span className="step-num">2</span>
+                      <span className="step-text">Keep the card steady for a few seconds until scanning is complete.</span>
+                    </li>
+                    <li className="scan-step">
+                      <span className="step-num">3</span>
+                      <span className="step-text">Wait for verification of your details.</span>
+                    </li>
+                    <li className="scan-step">
+                      <span className="step-num">4</span>
+                      <span className="step-text">After verification, your ration details will be displayed.</span>
+                    </li>
+                  </ol>
                 </div>
               </div>
 
@@ -414,25 +568,67 @@ function App() {
           )}
 
           {currentScreen === 'card-details' && (
-            <div className="screen-content">
-              <h2>{t.cardDetailsTitle}</h2>
-              <div className="card-details-display">
-                <div className="detail-row">
-                  <span className="detail-label">{t.cardHolderName}</span>
-                  <span className="detail-value">{t.cardHolderValue}</span>
+            <div className="screen-content card-details-screen">
+              <div className="card-details-layout">
+                {/* Left: Card Info */}
+                <div className="card-details-left">
+                  <h2>{t.cardDetailsTitle}</h2>
+                  <div className="card-details-display">
+                    <div className="detail-row">
+                      <span className="detail-label">{t.cardHolderName}</span>
+                      <span className="detail-value">{t.cardHolderValue}</span>
+                    </div>
+                    <div className="detail-row">
+                      <span className="detail-label">{t.familyMembers}</span>
+                      <span className="detail-value">{t.memberCount}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="detail-row">
-                  <span className="detail-label">{t.familyMembers}</span>
-                  <span className="detail-value">{t.memberCount}</span>
+
+                {/* Right: Family Members Panel */}
+                <div className="family-members-panel">
+                  <h3 className="family-panel-title">
+                    <span>👨‍👩‍👧‍👦</span> {t.familyMembersTitle}
+                  </h3>
+                  <div className="family-members-list">
+                    {t.familyMembersList.map((member, idx) => (
+                      <div
+                        key={idx}
+                        className={`family-member-card ${selectedMembers.includes(member.name) ? 'selected' : ''}`}
+                        onClick={() => toggleMemberSelection(member.name)}
+                      >
+                        <div className="member-avatar">
+                          {member.gender === 'Male' || member.gender === 'ஆண்' || member.gender === 'पुरुष' ? '👨' : '👩'}
+                        </div>
+                        <div className="member-info">
+                          <span className="member-name">{member.name}</span>
+                          <span className="member-meta">{member.relation} · {member.age} yrs</span>
+                        </div>
+                        <span className="member-relation-badge">{member.relation}</span>
+                        <div className="selection-indicator">
+                          {selectedMembers.includes(member.name) ? '✅' : '○'}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="machine-panel">
-                <button className="action-btn dispense-btn" onClick={() => setCurrentScreen('otp')}>{t.continue}</button>
+              {/* Centered buttons below both panels */}
+              <div className="machine-panel card-details-actions">
+                <button
+                  className="action-btn dispense-btn"
+                  onClick={() => setCurrentScreen('otp')}
+                  disabled={selectedMembers.length === 0}
+                >
+                  {t.continue}
+                </button>
                 <button className="action-btn back-btn" onClick={() => setCurrentScreen('qr')}>{t.back}</button>
               </div>
             </div>
           )}
+
+
 
           {currentScreen === 'otp' && (
             <div className="screen-content">
@@ -468,15 +664,10 @@ function App() {
               <h2>{t.selectAnItem}</h2>
               <p className="instruction-text">{t.instructionItems}</p>
 
-              {cart.length > 0 && (
-                <div className="cart-summary-mini">
-                  <span>{cart.length} item(s) in cart</span>
-                  <button className="action-btn small-btn" onClick={() => setCurrentScreen('cart')}>View Cart</button>
-                </div>
-              )}
 
-              <div className="items-horizontal-container">
-                <div className="items-list-horizontal">
+
+              <div className="items-grid-container">
+                <div className="items-grid">
                   {t.items.map(item => {
                     const isInCart = cart.find(cItem => cItem.id === item.id);
                     const currentWeight = itemWeights[item.id] || '';
@@ -522,11 +713,60 @@ function App() {
                 </div>
               </div>
 
+              {cart.length > 0 && (
+                <div className="inline-cart-section">
+                  <div className="inline-cart-header">
+                    <h3>🛒 {t.cartTitle}</h3>
+                    <div className="cart-item-count">{cart.length} items</div>
+                  </div>
+
+                  <div className="inline-cart-items">
+                    {cart.map((item, idx) => (
+                      <div key={idx} className="inline-cart-item">
+                        <div className="cart-item-info">
+                          <span className="cart-item-name">{item.name}</span>
+                          <span className="cart-item-qty">{item.selectedWeight} Kg</span>
+                        </div>
+                        <div className="cart-item-right">
+                          <span className="cart-item-cost">
+                            {item.price > 0 ? `₹${(item.selectedWeight * item.price).toFixed(2)}` : 'FREE'}
+                          </span>
+                          <button
+                            className="remove-item-btn"
+                            onClick={() => setCart(cart.filter((_, i) => i !== idx))}
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="inline-cart-footer">
+                    <div className="cart-grand-total">
+                      <span>Total Amount:</span>
+                      <strong>₹{calculateTotal().toFixed(2)}</strong>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="machine-panel">
-                <button className="action-btn back-btn" onClick={() => setCurrentScreen('otp')}>{t.back}</button>
                 {cart.length > 0 && (
-                  <button className="action-btn dispense-btn" onClick={() => setCurrentScreen('cart')}>{t.checkout}</button>
+                  <button
+                    className="action-btn dispense-btn checkout-now-btn"
+                    onClick={() => {
+                      if (calculateTotal() === 0) {
+                        startDispensing();
+                      } else {
+                        setCurrentScreen('payment');
+                      }
+                    }}
+                  >
+                    {t.checkout} →
+                  </button>
                 )}
+                <button className="action-btn back-btn" onClick={() => setCurrentScreen('otp')}>{t.back}</button>
               </div>
             </div>
           )}
